@@ -8,7 +8,7 @@ const IconContainer: FC<IconContainerProps> = ({}) => {
   return (
     <IconContainerStyle>
       <Image
-        src={"/../public/favicon.ico"}
+        src="/favicon.ico"
         alt={"TechDinner Logo"}
         width="50"
         height="50"
