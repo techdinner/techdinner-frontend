@@ -1,6 +1,6 @@
 ## TechDinner - Sistema de pedidos
 
-<img src="src/assets/logo-normal-black.svg" style="width: 500px; margin: 0 auto;" />
+<img src="src/assets/logo-normal-black.svg" style="display:block; width: 500px; margin: 0 auto;" />
 
 Frontend desenvolvido em `Next.js`
 
