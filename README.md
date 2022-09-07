@@ -4,7 +4,7 @@
 
 Frontend desenvolvido em `Next.js`
 
-Deploy URL: https://techdinner-frontend.vercel.app/
+Deploy URL: https://techdinner.vercel.app/
 
 Para rodar em servidor local:
 
