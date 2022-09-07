@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { HomeContainer } from "./styles";
+import { HomeContainer } from "../../../styles/pages/Home";
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +8,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Techdinner - Home</title>
         <meta name="description" content="Techdinner - Home" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <HomeContainer>
