@@ -2,11 +2,13 @@ import type { FC } from "react";
 import { FaBars } from "react-icons/fa";
 import { BurgerButtonStyle } from "./styles";
 
-interface BurgerButtonProps {}
+interface BurgerButtonProps {
+  onClick: () => void;
+}
 
-const BurgerButton: FC<BurgerButtonProps> = ({}) => {
+const BurgerButton: FC<BurgerButtonProps> = ({ onClick }) => {
   return (
-    <BurgerButtonStyle>
+    <BurgerButtonStyle onClick={onClick}>
       <FaBars />
     </BurgerButtonStyle>
   );

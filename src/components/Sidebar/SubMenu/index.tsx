@@ -8,10 +8,12 @@ interface ISubMenu {
   show: boolean;
 }
 
+// show={show}
+
 const SubMenu: React.FC<ISubMenu> = ({ item, show }) => {
   const allItems = [item, ...(item.subItems ?? [])];
   return (
-    <SubMenuStyle show={show}>
+    <SubMenuStyle className={`${show ? "show" : undefined}`}>
       {allItems.map((i) => (
         <SubMenuButton key={i.name} item={i} isTitle={i.name === item.name} />
       ))}

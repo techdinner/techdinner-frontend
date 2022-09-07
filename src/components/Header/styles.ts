@@ -8,8 +8,5 @@ export const HeaderStyle = styled.header`
   flex-shrink: 0;
   display: flex;
   align-items: center;
-
-  h3 {
-    color: ${colors.text};
-  }
+  position: relative;
 `;

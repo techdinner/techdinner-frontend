@@ -1,4 +1,6 @@
 import type { FC } from "react";
+import BurgerButton from "./BurgerButton";
+import HeaderTitle from "./HeaderTitle";
 import { HeaderStyle } from "./styles";
 
 interface HeaderProps {}
@@ -6,7 +8,12 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = ({}) => {
   return (
     <HeaderStyle>
-      <h3>TechDinner - Sistema de pedidos</h3>
+      <HeaderTitle />
+      <BurgerButton
+        onClick={() => {
+          console.log("clicked");
+        }}
+      />
     </HeaderStyle>
   );
 };
