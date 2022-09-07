@@ -6,7 +6,7 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = ({}) => {
         return (
             <HeaderStyle>
-
+                
             </HeaderStyle>
         );
 }

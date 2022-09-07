@@ -1,6 +1,7 @@
 {
   "name": "techdinner",
   "version": "0.1.0",
+  "description": "Frontend da aplicação TechDinner",
   "private": true,
   "scripts": {
     "dev": "next dev",

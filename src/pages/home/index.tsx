@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Container from './styles'
+import type { NextPage } from "next";
+import Head from "next/head";
+import { HomeContainer } from "./styles";
 
 const Home: NextPage = () => {
   return (
@@ -11,11 +11,17 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Container>
+      <HomeContainer>
         <h1>Hello World</h1>
-      </Container>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
+          sapiente ducimus impedit vel repellendus? Nisi hic, ex, quibusdam
+          aliquam, nesciunt dolores aperiam dolore saepe cumque odit quos
+          temporibus doloremque illo!
+        </p>
+      </HomeContainer>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

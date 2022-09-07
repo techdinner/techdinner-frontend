@@ -10,9 +10,11 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({children}) => {
   return (
     <LayoutStyle>
-        <Header />
         <Sidebar />
-        {children}
+        <div className="center">
+          <Header />
+          {children}
+        </div>
     </LayoutStyle>
   )
 }
