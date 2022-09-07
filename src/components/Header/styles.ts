@@ -6,4 +6,10 @@ export const HeaderStyle = styled.header`
   height: 50px;
   flex-grow: 0;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    color: ${colors.text};
+  }
 `;

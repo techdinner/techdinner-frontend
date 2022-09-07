@@ -4,7 +4,7 @@ import sizes from "../../../infra/sizes";
 export const SubMenuStyle = styled.ul<{ show: boolean }>`
   position: absolute;
   top: 0;
-  left: ${sizes.sidebar};
+  left: calc(${sizes.sidebar} - 4px);
   background-color: rgba(0, 0, 0, 0.9);
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
   cursor: default;

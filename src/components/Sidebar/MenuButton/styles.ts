@@ -3,11 +3,10 @@ import colors from "../../../../styles/colors";
 
 export const MenuButtonStyle = styled.button.attrs((item: any) => item)`
   height: 70px;
-  padding: 5px;
   position: relative;
   width: 100%;
   height: 50px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   justify-content: center;
   align-items: center;
   display: flex;
