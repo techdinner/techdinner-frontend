@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import Link from "next/link";
 import { SubMenuButtonStyle } from "./styles";
 import { ISidebarItem } from "../../../types/SidebarItem";
-import ConditionalLink from "../../../ConditionalLink";
+import ConditionalLink from "../../ConditionalLink";
 import { useRouter } from "next/router";
 
 interface SubMenuButtonProps {

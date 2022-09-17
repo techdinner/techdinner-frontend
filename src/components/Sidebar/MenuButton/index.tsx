@@ -3,7 +3,7 @@ import { ISidebarItem } from "../../../types/SidebarItem";
 import { MenuButtonStyle } from "./styles";
 import Link from "next/link";
 import SubMenu from "../SubMenu";
-import ConditionalLink from "../../../ConditionalLink";
+import ConditionalLink from "../../ConditionalLink";
 import { useRouter } from "next/router";
 interface MenuButtonProps {
   item: ISidebarItem;
