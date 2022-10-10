@@ -1,15 +1,30 @@
-import type { AppProps } from "next/app";
-import Layout from "../components/Layout";
-import GlobalStyle from "../../styles/globals";
-import Head from "next/head";
+import { CacheProvider, EmotionCache } from "@emotion/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-      <GlobalStyle />
-    </Layout>
-  );
+import "../infra/fonts";
+import createEmotionCache from "../infra/createEmotionCache";
+
+import * as React from "react";
+import Head from "next/head";
+import { AppProps } from "next/app";
+import { MuiProvider } from "../context/muiContext";
+
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
+
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
 }
 
-export default MyApp;
+export default function MyApp(props: MyAppProps) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <MuiProvider>
+        <Component {...pageProps} />
+      </MuiProvider>
+    </CacheProvider>
+  );
+}

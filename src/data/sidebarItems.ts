@@ -1,7 +1,7 @@
 import { ISidebarItem } from "../types/SidebarItem";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillPencilFill } from "react-icons/bs";
-import Icon from "../components/Icon";
+import Icon from "../../../trash/components/atoms/Icon";
 
 const sidebarItems: ISidebarItem[] = [
   {

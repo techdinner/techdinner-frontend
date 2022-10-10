@@ -6,7 +6,7 @@ export async function middleware(
 ): Promise<NextResponse> {
   const { pathname } = req.nextUrl;
   if (pathname === "/") {
-    return NextResponse.redirect(new URL("/home", req.url));
+    return NextResponse.redirect(new URL("/login", req.url));
   }
   return NextResponse.next();
 }
