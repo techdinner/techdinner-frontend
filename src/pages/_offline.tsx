@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, SvgIcon, Typography, useTheme } from "@mui/material";
 import { NextPage } from "next";
 import MuiLink from "@mui/material/Link";
-import { ReportProblem } from "@mui/icons-material";
+import { RiWifiOffLine } from "react-icons/ri";
 
-const FourZeroFour: NextPage = () => {
+const Offline: NextPage = () => {
   const { palette } = useTheme();
 
   return (
@@ -21,16 +21,23 @@ const FourZeroFour: NextPage = () => {
         textAlign: "center",
       }}
     >
-      <ReportProblem sx={{ fontSize: "5rem" }} />
+      <Box sx={{ fontSize: "5rem" }}>
+        <RiWifiOffLine />
+      </Box>
+
       <Typography variant="h3" sx={{ fontSize: { xs: 25, md: 50 } }}>
-        Página não encontrada!
+        Você está offline!
       </Typography>
+      <Typography variant="body2">
+        Tente recarregar esta página mais tarde.
+      </Typography>
+
       <Link href={"/"} passHref>
         <MuiLink color="secondary" sx={{ fontSize: { xs: 18, md: 25 } }}>
-          Voltar {"<<"}
+          Recarregar
         </MuiLink>
       </Link>
     </Box>
   );
 };
-export default FourZeroFour;
+export default Offline;

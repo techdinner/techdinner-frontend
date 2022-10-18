@@ -8,15 +8,17 @@ import {
   TextField,
   Typography,
   useTheme as useMuiTheme,
+  Link as MuiLink,
 } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LogoLight from "../assets/logo-extended-black.svg";
 import LogoDark from "../assets/logo-extended-white.svg";
 import Drawing from "../assets/drawing-login.svg";
 import { useMui } from "../context/muiContext";
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface LoginProps {}
 
@@ -63,9 +65,9 @@ const Login: NextPage<LoginProps> = ({}) => {
           </Typography>
         </Box>
 
-        <FormControl sx={{ gap: 2, flex: 0 }}>
+        <FormControl sx={{ gap: 2, flex: 0, spacing: 0 }}>
           <TextField label="Usuário, email ou telefone" />
-          <TextField label="Senha" />
+          <TextField type={"password"} label="Senha" />
           <Button size="large" variant="contained">
             Entrar
           </Button>
@@ -89,6 +91,16 @@ const Login: NextPage<LoginProps> = ({}) => {
             label={`Tema: ${currentTheme === "light" ? "Claro" : "Escuro"}`}
           />
         </FormControl>
+
+        <Link href="/forgotpass" passHref>
+          <MuiLink
+            color="secondary"
+            fontSize={"large"}
+            sx={{ textAlign: "center" }}
+          >
+            Esqueceu a senha?
+          </MuiLink>
+        </Link>
       </Grid>
       <Grid
         item

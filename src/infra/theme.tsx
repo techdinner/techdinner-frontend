@@ -3,10 +3,19 @@ import { red, green, grey } from "@mui/material/colors";
 // Create a theme instance.
 
 const dark = createTheme({
+  typography: {
+    allVariants: { color: grey[100] },
+  },
   palette: {
     mode: "dark",
+    // text: {
+    //   primary: "#fff",
+    //   disabled: "#b8b8b8",
+    //   secondary: grey[200],
+    // },
     background: {
       default: "#333333",
+      paper: "#201f1f",
     },
     secondary: {
       main: grey[100],
@@ -23,10 +32,19 @@ const dark = createTheme({
   },
 });
 const light = createTheme({
+  typography: {
+    allVariants: { color: grey[900] },
+  },
   palette: {
     mode: "light",
+    // text: {
+    //   primary: "#000",
+    //   disabled: "#b8b8b8",
+    //   secondary: grey[200],
+    // },
     background: {
-      default: grey[200],
+      default: "#F2F2F2",
+      paper: "#fff",
     },
     secondary: {
       main: grey.A100,

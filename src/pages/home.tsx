@@ -1,25 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Paper } from "@mui/material";
+import { Box, Paper, Typography, useTheme } from "@mui/material";
+import Page from "../components/templates/Page";
 
 const Home: NextPage = () => {
+  const { palette } = useTheme();
   return (
-    <>
-      <Head>
-        <title>Techdinner - Home</title>
-        <meta name="description" content="Techdinner - Home" />
-      </Head>
-
-      <Paper>
-        <h1>Hello World</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-          sapiente ducimus impedit vel repellendus? Nisi hic, ex, quibusdam
-          aliquam, nesciunt dolores aperiam dolore saepe cumque odit quos
-          temporibus doloremque illo!
-        </p>
-      </Paper>
-    </>
+    <Page title="Pedidos">
+      <Typography variant="h1">Home</Typography>
+      <Typography variant="body1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius sapiente
+        ducimus impedit vel repellendus? Nisi hic, ex, quibusdam aliquam,
+        nesciunt dolores aperiam dolore saepe cumque odit quos temporibus
+        doloremque illo!
+      </Typography>
+    </Page>
   );
 };
 
