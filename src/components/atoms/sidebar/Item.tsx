@@ -120,9 +120,7 @@ const Item: FC<{ item: ISidebarItem }> = ({ item }) => {
             <MenuItem key={sub.route} onClick={handleClose}>
               {router.asPath !== sub.route ? (
                 <Link href={sub.route ?? "#"} passHref>
-                  <MuiLink color="secondary" underline={"hover"}>
-                    {sub.name}
-                  </MuiLink>
+                  <MuiLink underline={"hover"}>{sub.name}</MuiLink>
                 </Link>
               ) : (
                 <Typography color="primary">{sub.name}</Typography>
