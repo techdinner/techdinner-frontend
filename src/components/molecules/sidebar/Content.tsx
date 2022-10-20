@@ -6,6 +6,7 @@ import { useSidebar } from "../../../context/organisms/sidebarContext";
 import Menu from "./Menu";
 import Logout from "./Logout";
 import Top from "./Top";
+import sidebarItems from "../../../infra/data/sidebarItems";
 
 const SidebarContent: FC = () => {
   const { open, setOpen } = useSidebar();
@@ -28,7 +29,7 @@ const SidebarContent: FC = () => {
     >
       <Top />
       <Divider />
-      <Menu />
+      <Menu items={sidebarItems} />
       <Divider />
       <Logout />
     </Box>

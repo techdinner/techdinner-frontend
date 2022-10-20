@@ -68,17 +68,17 @@ const Login: NextPage<LoginProps> = ({}) => {
         <FormControl sx={{ gap: 2, flex: 0, spacing: 0 }}>
           <TextField label="Usuário, email ou telefone" />
           <TextField type={"password"} label="Senha" />
-          <Button size="large" variant="contained">
+          <Button href="/home" size="large" variant="contained">
             Entrar
           </Button>
-          <Button
+          {/* <Button
             startIcon={<Google />}
             size="large"
             color="secondary"
             variant="contained"
           >
             Entrar com Google
-          </Button>
+          </Button> */}
           <FormControlLabel
             control={
               <Switch

@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { List } from "@mui/material";
-import sidebarItems from "../../../infra/data/sidebarItems";
 import Item from "../../atoms/sidebar/Item";
+import { ISidebarItem } from "../../../infra/types/SidebarItem";
 
-const Menu: FC = () => {
+const Menu: FC<{ items: ISidebarItem[] }> = ({ items }) => {
   return (
     <List
       disablePadding
@@ -15,7 +15,7 @@ const Menu: FC = () => {
         width: 1,
       }}
     >
-      {sidebarItems.map((item) => (
+      {items.map((item) => (
         <Item key={item.name} item={item} />
       ))}
     </List>
