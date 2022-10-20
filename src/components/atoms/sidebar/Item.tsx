@@ -117,15 +117,19 @@ const Item: FC<{ item: ISidebarItem }> = ({ item }) => {
           }}
         >
           {item.subItems.map((sub) => (
-            <MenuItem key={sub.route} onClick={handleClose}>
-              {router.asPath !== sub.route ? (
-                <Link href={sub.route ?? "#"} passHref>
+            <Link
+              key={sub.route}
+              href={router.asPath !== sub.route ? sub.route ?? "#" : "#"}
+              passHref
+            >
+              <MenuItem onClick={handleClose}>
+                {router.asPath !== sub.route ? (
                   <MuiLink underline={"hover"}>{sub.name}</MuiLink>
-                </Link>
-              ) : (
-                <Typography color="primary">{sub.name}</Typography>
-              )}
-            </MenuItem>
+                ) : (
+                  <Typography color="primary">{sub.name}</Typography>
+                )}
+              </MenuItem>
+            </Link>
           ))}
         </MuiMenu>
       )}

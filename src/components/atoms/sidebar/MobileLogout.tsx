@@ -5,6 +5,7 @@ import { Logout } from "@mui/icons-material";
 const MobileLogout: FC<{ click: () => void }> = ({ click }) => {
   return (
     <Button
+      href="/login"
       variant="outlined"
       onClick={click}
       sx={{

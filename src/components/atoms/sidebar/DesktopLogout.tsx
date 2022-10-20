@@ -6,6 +6,7 @@ const DesktopLogout: FC<{ click: () => void }> = ({ click }) => {
   return (
     <Tooltip title="Sair" placement="right">
       <IconButton
+        href="/login"
         aria-label="Sair"
         size="medium"
         onClick={click}

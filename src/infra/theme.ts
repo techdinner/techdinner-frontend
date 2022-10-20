@@ -21,6 +21,7 @@ const dark = createTheme({
     secondary: {
       main: grey[100],
     },
+
     primary: {
       main: "#556cd6",
     },
@@ -32,7 +33,7 @@ const dark = createTheme({
     },
   },
 });
-const light = createTheme(dark, {
+const light = createTheme({
   typography: {
     allVariants: { color: grey[900] },
   },
@@ -48,7 +49,17 @@ const light = createTheme(dark, {
       paper: "#fff",
     },
     secondary: {
-      main: grey.A100,
+      main: grey[800],
+    },
+
+    primary: {
+      main: "#556cd6",
+    },
+    error: {
+      main: red.A400,
+    },
+    success: {
+      main: green.A400,
     },
   },
 });
