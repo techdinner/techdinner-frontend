@@ -15,6 +15,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import { Person } from "@mui/icons-material";
+// import { parseCookies } from "nookies";
 import { useUser } from "../../../context/userContext";
 interface TopProps {}
 
@@ -40,6 +41,7 @@ const Top: FC<TopProps> = ({}) => {
       >
         <Image
           width={50}
+          alt="TechDinner Logo"
           height={50}
           src={
             theme.palette.mode == "dark"
@@ -56,6 +58,7 @@ const Top: FC<TopProps> = ({}) => {
         <Image
           width={150}
           height={70}
+          alt="TechDinner Logo"
           src={
             theme.palette.mode == "dark"
               ? TechDinnerCompleteLogoWhite

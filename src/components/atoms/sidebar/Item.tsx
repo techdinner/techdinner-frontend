@@ -1,33 +1,65 @@
-import { FC, MouseEvent, useEffect, useState } from "react";
 import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Menu as MuiMenu,
-  MenuItem,
   Tooltip,
   Typography,
-  Link as MuiLink,
 } from "@mui/material";
+
+import { createContext, useContext, useState, FC } from "react";
+import { _MouseEventA } from "../../../infra/types/events";
 import * as Icons from "@mui/icons-material";
 import { ISidebarItem } from "../../../infra/types/SidebarItem";
 import { useRouter } from "next/router";
-import MyMenu from "../../molecules/sidebar/Menu";
-import Link from "next/link";
+import SubMenu from "../../molecules/sidebar/SubMenu";
 
-const Item: FC<{ item: ISidebarItem }> = ({ item }) => {
-  const Icon = Icons[item.icon ?? "LabelRounded"];
-  const router = useRouter();
+interface ISidebarItemProvider {
+  item: ISidebarItem;
+}
 
+interface ISidebarItemContext {
+  isSubMenuOpen: boolean;
+  openSubMenu: (e: _MouseEventA) => void;
+  closeSubMenu: () => void;
+  item: ISidebarItem;
+  anchorEl: null | HTMLElement;
+}
+
+const SidebarItemContext = createContext<ISidebarItemContext>(
+  {} as ISidebarItemContext
+);
+
+const Item: FC<ISidebarItemProvider> = ({ item }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const isSubMenuOpen = Boolean(anchorEl);
 
-  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+  const closeSubMenu = () => {
     setAnchorEl(null);
   };
+  const openSubMenu = (e: _MouseEventA) => {
+    setAnchorEl(e.currentTarget);
+  };
+
+  return (
+    <SidebarItemContext.Provider
+      value={{ openSubMenu, closeSubMenu, isSubMenuOpen, item, anchorEl }}
+    >
+      <ItemComponent />
+    </SidebarItemContext.Provider>
+  );
+};
+
+export default Item;
+
+export const useSidebarItem = () => {
+  return useContext(SidebarItemContext);
+};
+
+const ItemComponent: FC = () => {
+  const { item, isSubMenuOpen, openSubMenu } = useSidebarItem();
+
+  const Icon = Icons[item.icon ?? "LabelRounded"];
+  const router = useRouter();
 
   return (
     <>
@@ -40,11 +72,11 @@ const Item: FC<{ item: ISidebarItem }> = ({ item }) => {
         placement="right"
       >
         <ListItemButton
-          aria-controls={open ? "basic-menu" : undefined}
+          aria-controls={isSubMenuOpen ? "basic-menu" : undefined}
           aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
+          aria-expanded={isSubMenuOpen ? "true" : undefined}
           href={item.route}
-          onClick={handleClick}
+          onClick={openSubMenu}
           component="a"
           alignItems="center"
           disableGutters
@@ -106,34 +138,7 @@ const Item: FC<{ item: ISidebarItem }> = ({ item }) => {
           />
         </ListItemButton>
       </Tooltip>
-      {item.subItems?.length && (
-        <MuiMenu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          {item.subItems.map((sub) => (
-            <Link
-              key={sub.route}
-              href={router.asPath !== sub.route ? sub.route ?? "#" : "#"}
-              passHref
-            >
-              <MenuItem onClick={handleClose}>
-                {router.asPath !== sub.route ? (
-                  <MuiLink underline={"hover"}>{sub.name}</MuiLink>
-                ) : (
-                  <Typography color="primary">{sub.name}</Typography>
-                )}
-              </MenuItem>
-            </Link>
-          ))}
-        </MuiMenu>
-      )}
+      <SubMenu item={item} />
     </>
   );
 };
-export default Item;

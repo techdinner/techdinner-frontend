@@ -1,13 +1,4 @@
-import {
-  createContext,
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, FC, ReactNode, useContext } from "react";
 import { IUser } from "../infra/types/user";
 
 interface IUserContext {

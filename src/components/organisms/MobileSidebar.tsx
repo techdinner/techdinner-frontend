@@ -23,7 +23,7 @@ const MobileSidebar: FC = () => {
       }}
       swipeAreaWidth={0}
       PaperProps={{
-        sx: { width: 1, height: 1, bgcolor: theme.palette.background.default },
+        sx: { width: 1, height: 1, bgcolor: "transparent" },
       }}
     >
       <Content />
