@@ -16,15 +16,15 @@ import { useEffect, useState } from "react";
 import LogoLight from "../assets/logo-extended-black.svg";
 import LogoDark from "../assets/logo-extended-white.svg";
 import Drawing from "../assets/drawing-login.svg";
-import { useMui } from "../context/muiContext";
 import { NextPage } from "next";
 import Link from "next/link";
+import ThemeSwitcher from "../components/atoms/ThemeSwitcher";
 
 interface LoginProps {}
 
 const Login: NextPage<LoginProps> = ({}) => {
   const theme = useMuiTheme();
-  const { currentTheme, setCurrentTheme } = useMui();
+
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
@@ -79,17 +79,7 @@ const Login: NextPage<LoginProps> = ({}) => {
           >
             Entrar com Google
           </Button> */}
-          <FormControlLabel
-            control={
-              <Switch
-                checked={currentTheme === "light" ? true : false}
-                onChange={(e) =>
-                  setCurrentTheme(e.target.checked ? "light" : "dark")
-                }
-              />
-            }
-            label={`Tema: ${currentTheme === "light" ? "Claro" : "Escuro"}`}
-          />
+          <ThemeSwitcher showLabel />
         </FormControl>
 
         <Link href="/forgotpass" passHref>

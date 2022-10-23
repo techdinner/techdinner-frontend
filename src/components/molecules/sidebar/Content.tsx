@@ -7,6 +7,7 @@ import Menu from "./Menu";
 import Logout from "./Logout";
 import Top from "./Top";
 import sidebarItems from "../../../infra/data/sidebarItems";
+import ThemeSwitcher from "../../atoms/ThemeSwitcher";
 
 const SidebarContent: FC = () => {
   const { open, setOpen } = useSidebar();
@@ -20,16 +21,17 @@ const SidebarContent: FC = () => {
         borderRadius: 3,
         paddingX: 0.5,
         width: 1,
-        // justifyContent: "center",
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
-        boxShadow: 3,
+        boxShadow: 2,
       }}
     >
       <Top />
       <Divider />
       <Menu items={sidebarItems} />
+      <Divider />
+      <ThemeSwitcher />
       <Divider />
       <Logout />
     </Box>

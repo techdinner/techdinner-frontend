@@ -1,4 +1,4 @@
-import { AppBar, Box, Drawer, Grid } from "@mui/material";
+import { AppBar, Box, Drawer, Grid, Toolbar } from "@mui/material";
 import { FC, ReactElement, useEffect, useState } from "react";
 import Header from "../organisms/Header";
 import MobileSidebar from "../organisms/MobileSidebar";
@@ -24,13 +24,39 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       height={"100vh"}
       component={"div"}
       className="fodase"
-      sx={{ display: "flex", flexDirection: "column", spacing: 0, gap: 0 }}
+      // sx={{ display: "flex", flexDirection: "column", spacing: 0, gap: 0 }}
     >
-      <Header />
-      {children}
       <DesktopSidebar />
       <MobileSidebar />
+      <Box display="flex" height={1} flexDirection={"column"}>
+        <Header />
+        {/* <Toolbar /> */}
+        {/* <Toolbar /> */}
+        {children}
+      </Box>
     </Box>
+    // <Grid
+    //   container
+    //   height={"100vh"}
+    //   // component={"div"}
+    //   // className="fodase"
+    //   // sx={{ display: "flex", flexDirection: "column", spacing: 0, gap: 0 }}
+    // >
+    //   <Grid item xs={0.1}>
+    //     <DesktopSidebar />
+    //     <MobileSidebar />
+    //   </Grid>
+    //   <Grid item xs>
+    //     <Grid container spacing={0}>
+    //       <Grid item xs={12}>
+    //         <Header />
+    //       </Grid>
+    //       <Grid item xs>
+    //         {children}
+    //       </Grid>
+    //     </Grid>
+    //   </Grid>
+    // </Grid>
   );
 };
 
