@@ -1,11 +1,26 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { Box, Card, Grid, Paper, Typography, useTheme } from "@mui/material";
+
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import { useTheme } from "@mui/material/styles";
+
+import Add from "@mui/icons-material/Add";
+
 import Page from "../components/templates/Page";
-import { useHome } from "../context/pages/homeContext";
-import Image from "next/image";
-import NoOrderSelected from "../assets/NoOrderSelected.svg";
-import { Container } from "@mui/system";
+import { HomeProvider, useHome } from "../context/pages/homeContext";
+
+import NoOrderSelected from "../components/organisms/home/NoOrderSelected";
+import OrderProvider from "../context/pages/orderContext";
+import OrdersList from "../components/organisms/home/OrdersList";
+
+const HomeWrapper: NextPage = () => {
+  return (
+    <HomeProvider>
+      <Home />
+    </HomeProvider>
+  );
+};
+
 const Home: NextPage = () => {
   const { palette } = useTheme();
   const { currentOrder } = useHome();
@@ -34,7 +49,7 @@ const Home: NextPage = () => {
             height: 1,
           }}
         >
-          <Paper></Paper>
+          <OrdersList />
         </Grid>
         <Grid
           item
@@ -49,27 +64,11 @@ const Home: NextPage = () => {
             alignItems: "center",
           }}
         >
-          {currentOrder ? (
-            <Card></Card>
-          ) : (
-            <Container
-              sx={{
-                display: { xs: "none", md: "flex" },
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                height={500}
-                alt="No order selected image"
-                src={NoOrderSelected}
-              />
-            </Container>
-          )}
+          {currentOrder ? <OrderProvider /> : <NoOrderSelected />}
         </Grid>
       </Grid>
     </Page>
   );
 };
 
-export default Home;
+export default HomeWrapper;

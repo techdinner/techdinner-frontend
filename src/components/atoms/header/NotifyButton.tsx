@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
-import { Badge, IconButton } from "@mui/material";
+import Badge from "@mui/material/Badge";
+import IconButton from "@mui/material/IconButton";
 import { NotificationsRounded } from "@mui/icons-material";
 import NotifyMenu from "../../molecules/header/NotifyMenu";
 import { _MouseEventA, _MouseEventButton } from "../../../infra/types/events";

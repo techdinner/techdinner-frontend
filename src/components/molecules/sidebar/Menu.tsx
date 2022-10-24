@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { List } from "@mui/material";
+import List from "@mui/material/List";
 import Item from "../../atoms/sidebar/Item";
 import { ISidebarItem } from "../../../infra/types/SidebarItem";
 

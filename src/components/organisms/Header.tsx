@@ -1,21 +1,16 @@
-import {
-  AppBar,
-  Badge,
-  Box,
-  ButtonGroup,
-  IconButton,
-  Toolbar,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import { Menu, NotificationsRounded, Help } from "@mui/icons-material";
-import type { Dispatch, FC, SetStateAction } from "react";
+import AppBar from "@mui/material/AppBar";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+import { Menu, Help } from "@mui/icons-material";
+import type { FC } from "react";
 import { useSidebar } from "../../context/organisms/sidebarContext";
 import { useRouter } from "next/router";
 import routeTitle from "../../infra/data/routeTitle";
 import { NotifyProvider } from "../../context/notifyContext";
 import NotifyButton from "../atoms/header/NotifyButton";
-// import routeTitle from "../../data/routeTitle";
 
 const Header: FC = () => {
   const { setOpen: setSidebarOpen, width: sidebarWidth } = useSidebar();

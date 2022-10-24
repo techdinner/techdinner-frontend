@@ -1,5 +1,5 @@
 import { createTheme, Theme } from "@mui/material/styles";
-import { red, green, grey } from "@mui/material/colors";
+import { red, green, grey, yellow } from "@mui/material/colors";
 // Create a theme instance.
 
 const dark = createTheme({
@@ -23,10 +23,13 @@ const dark = createTheme({
     },
 
     primary: {
-      main: "#556cd6",
+      main: "#5496ff", //4287f5
     },
     error: {
-      main: red.A400,
+      main: red.A100,
+    },
+    warning: {
+      main: yellow.A100,
     },
     success: {
       main: green.A400,
@@ -53,10 +56,13 @@ const light = createTheme({
     },
 
     primary: {
-      main: "#556cd6",
+      main: "#5d78f5",
     },
     error: {
       main: red.A400,
+    },
+    warning: {
+      main: yellow[800],
     },
     success: {
       main: green.A400,

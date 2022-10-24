@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { ISidebarItem } from "../../../infra/types/SidebarItem";
-import { MenuItem, Typography, Link as MuiLink } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
+import MuiLink from "@mui/material/Link";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useSidebarItem } from "../sidebar/Item";

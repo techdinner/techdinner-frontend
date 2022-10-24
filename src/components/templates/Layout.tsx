@@ -1,16 +1,13 @@
-import { AppBar, Box, Drawer, Grid, Toolbar } from "@mui/material";
-import { FC, ReactElement, useEffect, useState } from "react";
+import Box from "@mui/material/Box";
+import { FC, useEffect, useState } from "react";
 import Header from "../organisms/Header";
 import MobileSidebar from "../organisms/MobileSidebar";
 import DesktopSidebar from "../organisms/DesktopSidebar";
-import { useSidebar } from "../../context/organisms/sidebarContext";
-
 interface LayoutProps {
   children?: JSX.Element;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const { width: sidebarWidth } = useSidebar();
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {

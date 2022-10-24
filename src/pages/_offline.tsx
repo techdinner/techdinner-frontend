@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Box, SvgIcon, Typography, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
 import { NextPage } from "next";
 import MuiLink from "@mui/material/Link";
 import { RiWifiOffLine } from "react-icons/ri";

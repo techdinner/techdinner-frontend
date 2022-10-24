@@ -1,16 +1,11 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  FormControlLabel,
-  Grid,
-  Switch,
-  TextField,
-  Typography,
-  useTheme as useMuiTheme,
-  Link as MuiLink,
-} from "@mui/material";
-import { Google } from "@mui/icons-material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import FormControl from "@mui/material/FormControl";
+import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import MuiLink from "@mui/material/Link";
+import { useTheme as useMuiTheme } from "@mui/material/styles";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import LogoLight from "../assets/logo-extended-black.svg";

@@ -5,6 +5,14 @@ export interface IOrder {
   customer: ICustomer;
   type: "consume" | "withdraw" | "delivery";
   platform: IPlatform;
+  status: IStatus;
+}
+
+export interface IStatus {
+  name: string;
+  color: string;
+  possibleAfter: IStatus[];
+  subStatus: IStatus[];
 }
 
 export interface IPlatform {

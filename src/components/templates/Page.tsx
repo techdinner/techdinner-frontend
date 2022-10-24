@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Box, useTheme } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 import { ReactNode } from "react";
 import { useSidebar } from "../../context/organisms/sidebarContext";
 

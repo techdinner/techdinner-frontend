@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import type { FC } from "react";
 import DesktopLogout from "../../atoms/sidebar/DesktopLogout";
 import MobileLogout from "../../atoms/sidebar/MobileLogout";
@@ -9,13 +9,14 @@ const Logout: FC<LogoutProps> = ({}) => {
   return (
     <Box
       sx={{
-        width: { xs: "min(50%, 400px)", md: 1 },
+        width: { xs: "min(30%, 400px)", md: 1 },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        paddingY: 2,
+        paddingY: 1,
         paddingX: 0,
+        flexShrink: 1,
       }}
     >
       <MobileLogout click={() => {}} />

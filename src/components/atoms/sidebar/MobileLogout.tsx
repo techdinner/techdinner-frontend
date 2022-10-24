@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import type { FC } from "react";
 import { Logout } from "@mui/icons-material";
 

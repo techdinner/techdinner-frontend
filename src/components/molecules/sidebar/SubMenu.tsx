@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { ISidebarItem } from "../../../infra/types/SidebarItem";
-import { Menu as MuiMenu } from "@mui/material";
+import MuiMenu from "@mui/material/Menu";
 import SubMenuItem from "../../atoms/header/SubMenuItem";
 import { useSidebarItem } from "../../atoms/sidebar/Item";
 

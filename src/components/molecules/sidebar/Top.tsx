@@ -4,16 +4,13 @@ import TechDinnerLogoWhite from "../../../assets/logo-compressed-white.svg";
 import TechDinnerCompleteLogoDark from "../../../assets/logo-normal-black.svg";
 import TechDinnerCompleteLogoWhite from "../../../assets/logo-normal-white.svg";
 import Image from "next/image";
-import {
-  Box,
-  Avatar,
-  useTheme,
-  Container,
-  Button,
-  Typography,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import { useTheme } from "@mui/material/styles";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import { Person } from "@mui/icons-material";
 // import { parseCookies } from "nookies";
 import { useUser } from "../../../context/userContext";
@@ -79,8 +76,8 @@ const Top: FC<TopProps> = ({}) => {
             borderRadius: { xs: "2px", md: "50%" },
           }}
         >
-          {user.imageURL ? (
-            <Avatar sx={{ width: 30, height: 30 }} src={user.imageURL} />
+          {user.photo ? (
+            <Avatar sx={{ width: 30, height: 30 }} src={user.photo} />
           ) : (
             <Person />
           )}

@@ -1,7 +1,6 @@
-import { Dispatch, FC, SetStateAction, SyntheticEvent, useState } from "react";
-// import IconContainer from "./Sidebar";
-// import Menu from "../molecules/SidebarButtonsList";
-import { Box, Drawer, SwipeableDrawer, useTheme } from "@mui/material";
+import { FC, SyntheticEvent } from "react";
+import { useTheme } from "@mui/material/styles";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import { useSidebar } from "../../context/organisms/sidebarContext";
 import Content from "../molecules/sidebar/Content";
 

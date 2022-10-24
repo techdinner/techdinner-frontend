@@ -1,4 +1,5 @@
-import { IconButton, Tooltip } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import type { FC } from "react";
 import { Logout } from "@mui/icons-material";
 
@@ -8,7 +9,7 @@ const DesktopLogout: FC<{ click: () => void }> = ({ click }) => {
       <IconButton
         href="/login"
         aria-label="Sair"
-        size="medium"
+        size="small"
         onClick={click}
         sx={{
           display: { xs: "none", md: "inline-flex" },
@@ -18,7 +19,7 @@ const DesktopLogout: FC<{ click: () => void }> = ({ click }) => {
           color: "primary.main",
         }}
       >
-        <Logout />
+        <Logout fontSize="small" />
       </IconButton>
     </Tooltip>
   );

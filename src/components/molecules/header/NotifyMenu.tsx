@@ -1,4 +1,8 @@
-import { Box, Grid, Menu, MenuItem, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
 import type { FC } from "react";
 import { useNotify } from "../../../context/notifyContext";
 import * as Icons from "@mui/icons-material";

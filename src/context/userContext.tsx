@@ -1,5 +1,5 @@
 import { createContext, FC, ReactNode, useContext } from "react";
-import { IUser } from "../infra/types/user";
+import { IUser } from "../infra/types/entities/user";
 
 interface IUserContext {
   user: IUser;
@@ -18,7 +18,7 @@ export const UserProvider: FC<IUserProvider> = ({ children }) => {
     email: "mark@example.com",
     username: "markgodberg",
     phone: "71 98899-9899",
-    imageURL:
+    photo:
       "https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg",
   };
 
