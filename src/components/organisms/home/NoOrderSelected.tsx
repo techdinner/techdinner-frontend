@@ -15,11 +15,13 @@ const NoOrderSelected: FC = () => {
       }}
     >
       <Image
-        height={500}
+        height={400}
         alt="No order selected image"
         src={NoOrderSelectedImage}
       />
-      <Typography variant="h3">Nenhum pedido selecionado!</Typography>
+      <Typography variant="subtitle2" sx={{ fontSize: { md: 15, lg: 18 } }}>
+        Nenhum pedido selecionado!
+      </Typography>
       <Typography variant="body2" textAlign={"center"}>
         Inicie um novo pedido, ou abra um pedido existente para ver as opções.
       </Typography>

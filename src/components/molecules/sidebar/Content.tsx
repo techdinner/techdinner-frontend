@@ -24,6 +24,7 @@ const SidebarContent: FC = () => {
         borderRadius: 3,
         paddingX: 0.5,
         width: 1,
+        overflow: "hidden",
         alignItems: "center",
         display: "flex",
         flexDirection: "column",
@@ -42,11 +43,11 @@ const SidebarContent: FC = () => {
         <Close />
       </IconButton>
       <Top />
-      <Divider />
+      {/* <Divider /> */}
       <Menu items={sidebarItems} />
-      <Divider />
+      {/* <Divider /> */}
       <ThemeSwitcher />
-      <Divider />
+      {/* <Divider /> */}
       <Logout />
     </Box>
   );

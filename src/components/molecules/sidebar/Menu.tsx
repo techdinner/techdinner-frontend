@@ -8,11 +8,13 @@ const Menu: FC<{ items: ISidebarItem[] }> = ({ items }) => {
     <List
       disablePadding
       sx={{
-        flex: 1,
+        flexShrink: 1,
+        flexGrow: 1,
         display: "flex",
         flexDirection: "column",
         gap: 1.2,
         width: 1,
+        // height: 0.57,
       }}
     >
       {items.map((item) => (

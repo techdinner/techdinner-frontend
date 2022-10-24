@@ -11,8 +11,9 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ showLabel = false }) => {
   const { currentTheme, setCurrentTheme } = useMui();
   return (
     <FormControlLabel
+      sx={{ width: 1, overflow: "visible" }}
       labelPlacement={showLabel ? "end" : "bottom"}
-      componentsProps={{ typography: { variant: "subtitle2", fontSize: 11 } }}
+      componentsProps={{ typography: { variant: "subtitle2", fontSize: 10 } }}
       control={
         <Switch
           size="small"

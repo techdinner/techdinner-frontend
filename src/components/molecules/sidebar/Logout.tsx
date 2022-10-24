@@ -9,14 +9,15 @@ const Logout: FC<LogoutProps> = ({}) => {
   return (
     <Box
       sx={{
-        width: { xs: "min(30%, 400px)", md: 1 },
+        // width: { xs: "min(30%, 400px)", md: 1 },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        paddingY: 1,
+        minHeight: 10,
+        paddingY: 2,
         paddingX: 0,
-        flexShrink: 1,
+        // flexShrink: 1,
       }}
     >
       <MobileLogout click={() => {}} />
